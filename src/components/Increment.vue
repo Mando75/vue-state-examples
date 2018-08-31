@@ -13,11 +13,6 @@ const mapToProps = ({ count }) => ({ count })
 
 export default {
   name: 'Increment',
-  data () {
-    return {
-      count: 0
-    }
-  },
   created () {
     connect(this, this.$store, mapToProps, actions)
   }

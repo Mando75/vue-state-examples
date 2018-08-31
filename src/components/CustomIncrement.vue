@@ -15,8 +15,7 @@ export default {
   name: 'CustomIncrement',
   data () {
     return {
-      inputVal: 0,
-      count: 0
+      inputVal: 0
     }
   },
   created () {
