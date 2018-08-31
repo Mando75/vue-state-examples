@@ -1,17 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img src="./assets/logo.png" />
+    <h1>State Management Example: Vuex</h1>
+    <hr>
+    <CountDisplay />
+    <div id="btn-wrapper">
+      <Increment />
+      <Decrement />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CountDisplay from './components/CountDisplay'
+import Increment from './components/Increment'
+import Decrement from './components/Decrement'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CountDisplay,
+    Increment,
+    Decrement
   }
 }
 </script>
@@ -24,5 +34,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+ .btn {
+  padding: 15px 20px;
+  color: #2c3e50;
+  background-color: #57cc8d;
+  border-radius: 10px;
+  box-shadow: 3px 2px 2px lightgrey;
+  margin: 20px;
+  font-size: 1.2em;
 }
 </style>
