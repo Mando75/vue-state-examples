@@ -9,12 +9,18 @@
 import { connect } from 'redux-zero/vue'
 import { actions } from '../actions'
 
+// Select which parts of the store this component will connect to
 const mapToProps = ({ count }) => ({ count })
 
 export default {
   name: 'CustomIncrement',
   data () {
     return {
+      // Because this component does not actually display the count,
+      // we do not need to include it in our data. If we were going to
+      // use it in some other method, we would need to list it in the data
+
+      // custom value to add
       inputVal: 0
     }
   },

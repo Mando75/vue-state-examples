@@ -1,3 +1,7 @@
+// Recommended way to create the actions
+// Keep functions pure, returning the value of the to-be-modified state
+
+// Async functions can use the setState method to update the state
 export const actions = store => ({
   increment: state => ({ count: state.count + 1 }),
   decrement: state => ({ count: state.count - 1 }),

@@ -1,4 +1,4 @@
-# vuex-example
+# redux-zero
 
 ## Project setup
 ```

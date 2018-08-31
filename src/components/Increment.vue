@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// see Custom Increment for explanation
 import { connect } from 'redux-zero/vue'
 import { actions } from '../actions'
 
