@@ -6,12 +6,20 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
+import { connect } from 'redux-zero/vue'
+import { actions } from '../actions'
+
+const mapToProps = ({ count }) => ({ count })
+
 export default {
   name: 'Decrement',
-  methods: {
-    ...mapMutations(['decrement']),
-    ...mapActions(['asyncDecrement'])
+  data () {
+    return {
+      count: 0
+    }
+  },
+  created () {
+    connect(this, this.$store, mapToProps, actions)
   }
 }
 </script>

@@ -6,17 +6,21 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { connect } from 'redux-zero/vue'
+import { actions } from '../actions'
+
+const mapToProps = ({ count }) => ({ count })
 
 export default {
   name: 'CustomIncrement',
   data () {
     return {
-      inputVal: 0
+      inputVal: 0,
+      count: 0
     }
   },
-  methods: {
-    ...mapActions(['addToCounter'])
+  created () {
+    connect(this, this.$store, mapToProps, actions)
   }
 }
 </script>
