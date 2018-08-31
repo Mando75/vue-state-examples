@@ -8,6 +8,7 @@
       <Increment />
       <Decrement />
     </div>
+    <CustomIncrement />
   </div>
 </template>
 
@@ -15,13 +16,15 @@
 import CountDisplay from './components/CountDisplay'
 import Increment from './components/Increment'
 import Decrement from './components/Decrement'
+import CustomIncrement from './components/CustomIncrement'
 
 export default {
   name: 'app',
   components: {
     CountDisplay,
     Increment,
-    Decrement
+    Decrement,
+    CustomIncrement
   }
 }
 </script>
