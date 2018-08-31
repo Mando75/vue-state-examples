@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 1
+    count: 0
   },
   getters: {
     getCount: state => state.count,
@@ -16,6 +16,7 @@ export default new Vuex.Store({
     decrement: state => state.count--
   },
   actions: {
-
+    asyncIncrement: context => setTimeout(() => context.commit('increment'), 500),
+    asyncDecrement: context => setTimeout(() => context.commit('decrement'), 500)
   }
 })
