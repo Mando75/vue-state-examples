@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png" />
-    <h1>State Management Example: Vuex</h1>
+    <h1>State Management Example: Apollo Client</h1>
     <hr>
     <CountDisplay />
     <div id="btn-wrapper">
@@ -47,5 +47,9 @@ export default {
   box-shadow: 3px 2px 2px lightgrey;
   margin: 20px;
   font-size: 1.2em;
+}
+
+#btn-wrapper {
+  display: inline-flex;
 }
 </style>

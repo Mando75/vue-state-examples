@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import store from './store'
+import { provider } from './apollo/apolloProvider'
+import VueApollo from 'vue-apollo'
 
 Vue.config.productionTip = false
 
+Vue.use(VueApollo)
+
 new Vue({
-  store,
+  apolloProvider: provider,
   render: h => h(App)
 }).$mount('#app')

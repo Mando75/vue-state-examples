@@ -1,24 +1,24 @@
 <template>
   <div>
-    <h1>Count</h1>
-    <h1>{{ getCount }}</h1>
-    <h2>Doubled Count</h2>
-    <h2>{{ getDoubledCount }}</h2>
+      <ApolloQuery
+        :query="require('../apollo/queries/getCount').default">
+        <template slot-scope="{ result: { data: { count: { value } } } }">
+          <h1>
+            Count
+          </h1>
+          <h1>
+            {{ value }}
+          </h1>
+        </template>
+      </ApolloQuery>
   </div>
 </template>
 
 <script>
 
-import { mapGetters } from 'vuex'
 
 export default {
-  name: 'CountDisplay',
-  computed: {
-    ...mapGetters([
-      'getCount',
-      'getDoubledCount'
-    ])
-  }
+  name: 'CountDisplay'
 }
 </script>
 
