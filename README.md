@@ -1,4 +1,4 @@
-# vuex-example
+# Apollo Link State Example 
 
 ## Project setup
 ```
