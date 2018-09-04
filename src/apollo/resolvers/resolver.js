@@ -36,10 +36,10 @@ export const resolvers = {
       return null
     },
     asyncIncrement: (_, args, { cache }) => {
-      const { count } = cache.readQuery({ query: getCount })
       // mutations can be asynchronous
       return new Promise(resolve => {
         setTimeout(() => {
+          const { count } = cache.readQuery({ query: getCount })
           cache.writeData({
             data: {
               count: {
@@ -53,9 +53,9 @@ export const resolvers = {
       })
     },
     asyncDecrement: (_, args, { cache }) => {
-      const { count } = cache.readQuery({ query: getCount })
       return new Promise(resolve => {
         setTimeout(() => {
+          const { count } = cache.readQuery({ query: getCount })
           cache.writeData({
             data: {
               count: {
