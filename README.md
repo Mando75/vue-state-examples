@@ -1,4 +1,4 @@
-# vuex-example
+# vuelm
 
 ## Project setup
 ```

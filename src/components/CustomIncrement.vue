@@ -6,19 +6,20 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { connect } from 'vuelm'
+import store from '../store'
 
-export default {
+const CustomIncrement = {
   name: 'CustomIncrement',
   data () {
     return {
       inputVal: 0
     }
-  },
-  methods: {
-    ...mapActions(['addToCounter'])
   }
 }
+
+// connect the component to the store(s)
+export default connect(CustomIncrement, { store })
 </script>
 
 <style>

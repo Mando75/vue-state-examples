@@ -6,14 +6,15 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
-export default {
-  name: 'Decrement',
-  methods: {
-    ...mapMutations(['decrement']),
-    ...mapActions(['asyncDecrement'])
-  }
+import { connect } from 'vuelm'
+import store from '../store'
+
+const Decrement = {
+  name: 'Decrement'
 }
+
+// connect the component to the store(s)
+export default connect(Decrement, { store })
 </script>
 
 <style>

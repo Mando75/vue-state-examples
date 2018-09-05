@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import { mapMutations, mapActions } from 'vuex'
+import { connect } from 'vuelm'
+import store from '../store'
 
-export default {
-  name: 'Increment',
-  methods: {
-    ...mapMutations(['increment']),
-    ...mapActions(['asyncIncrement'])
-  }
+const Increment = {
+  name: 'Increment'
 }
+
+// connect the component to the store(s)
+export default connect(Increment, { store })
 </script>
 
 <style>

@@ -1,24 +1,50 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { store, types } from 'vuelm'
 
-Vue.use(Vuex)
+// Define the update types
+const Type = types('INCREMENT', 'DECREMENT', 'ADD_COUNT')
 
-export default new Vuex.Store({
-  state: {
-    count: 0
+// Define the initial state
+const state = {
+  count: 0
+}
+
+// Assign functions to the update types
+const updates = {
+  [Type.INCREMENT] (state) {
+    state.count = state.count + 1
+    return state
   },
-  getters: {
-    getCount: state => state.count,
-    getDoubledCount: state => state.count * 2
+
+  [Type.DECREMENT] (state) {
+    state.count = state.count - 1
+    return state
   },
-  mutations: {
-    increment: state => state.count++,
-    decrement: state => state.count--,
-    addToCounter: (state, { toAdd }) => { state.count += toAdd }
-  },
-  actions: {
-    asyncIncrement: context => setTimeout(() => context.commit('increment'), 500),
-    asyncDecrement: context => setTimeout(() => context.commit('decrement'), 500),
-    addToCounter: ({ commit }, payload) => commit('addToCounter', payload)
+
+  [Type.ADD_COUNT] (state, toAdd) {
+    state.count = state.count + toAdd
+    return state
   }
-})
+}
+
+// Create custom actions
+const actions = {
+  increment () {
+    this.update(Type.INCREMENT)
+  },
+  decrement () {
+    this.update(Type.DECREMENT)
+  },
+  asyncIncrement () {
+    setTimeout(() => this.update(Type.INCREMENT), 500)
+  },
+  asyncDecrement () {
+    setTimeout(() => this.update(Type.DECREMENT), 500)
+  },
+  addToCounter ({ toAdd }) {
+    this.update(Type.ADD_COUNT, toAdd)
+  }
+
+}
+
+// Link the state, updates functions, and actions
+export default store(state, updates, actions)
