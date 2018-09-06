@@ -20,7 +20,6 @@ import CustomIncrement from './components/CustomIncrement'
 import store from './store'
 import Vue from 'vue'
 
-
 export default {
   name: 'app',
   components: {
