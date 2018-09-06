@@ -2,12 +2,12 @@
   <div>
       <ApolloQuery
         :query="require('../apollo/queries/getCount').default">
-        <template slot-scope="{ result: { data: { count: { value } } } }">
+        <template slot-scope="{ result : { data: { count } } }">
           <h1>
             Count
           </h1>
           <h1>
-            {{ value }}
+            {{ count }}
           </h1>
         </template>
       </ApolloQuery>

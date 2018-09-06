@@ -5,8 +5,6 @@ import { gql } from 'apollo-boost'
 // state cache instead of the network.
 export default gql`
 {
-    count @client {
-      value
-    }
+    count @client
 }
 `

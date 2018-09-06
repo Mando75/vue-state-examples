@@ -5,6 +5,7 @@ import VueApollo from 'vue-apollo'
 
 Vue.config.productionTip = false
 
+// Our store is actually just the ApolloCache
 Vue.use(VueApollo)
 
 new Vue({

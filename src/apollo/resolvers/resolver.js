@@ -12,10 +12,7 @@ export const resolvers = {
       // Write the new data to the cache
       cache.writeData({
         data: {
-          count: {
-            value: count.value + 1,
-            __typename: 'Count'
-          }
+          count: count + 1
         }
       })
       // GraphQL mutations require a return value
@@ -27,10 +24,7 @@ export const resolvers = {
 
       cache.writeData({
         data: {
-          count: {
-            value: count.value - 1,
-            __typename: 'Count'
-          }
+          count: count - 1
         }
       })
       return null
@@ -42,10 +36,7 @@ export const resolvers = {
           const { count } = cache.readQuery({ query: getCount })
           cache.writeData({
             data: {
-              count: {
-                value: count.value + 1,
-                __typename: 'Count'
-              }
+              count: count + 1
             }
           })
           resolve(null)
@@ -58,10 +49,7 @@ export const resolvers = {
           const { count } = cache.readQuery({ query: getCount })
           cache.writeData({
             data: {
-              count: {
-                value: count.value - 1,
-                __typename: 'Count'
-              }
+              count: count - 1
             }
           })
           resolve(null)
@@ -75,10 +63,7 @@ export const resolvers = {
 
       cache.writeData({
         data: {
-          count: {
-            value: count.value + toAdd,
-            __typename: 'Count'
-          }
+          count: count + toAdd
         }
       })
       return null

@@ -11,10 +11,7 @@ const link = withClientState({
   cache,
   resolvers,
   defaults: {
-    count: {
-      __typename: 'Count',
-      value: 0
-    }
+    count: 0
   }
 })
 
