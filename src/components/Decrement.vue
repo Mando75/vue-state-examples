@@ -7,9 +7,16 @@
 
 <script>
 import { mapMutations, mapActions } from 'vuex'
+// These mapping functions allow us to specify which
+// actions/mutations the component will have access t
+// Ideally you would never access mutations directly, instead
+// you would use an action to fire them. This is just an example
+
 export default {
   name: 'Decrement',
   methods: {
+    // Using the spread operator so we can
+    // add more custom local methods
     ...mapMutations(['decrement']),
     ...mapActions(['asyncDecrement'])
   }

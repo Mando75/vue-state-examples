@@ -7,6 +7,8 @@
 
 <script>
 import { mapActions } from 'vuex'
+// this mapping function allows us to specify which
+// actions our component has access to
 
 export default {
   name: 'CustomIncrement',
@@ -16,6 +18,8 @@ export default {
     }
   },
   methods: {
+    // Use the spread syntax so we can still add
+    // our own custom local methods
     ...mapActions(['addToCounter'])
   }
 }
