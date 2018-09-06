@@ -4,6 +4,7 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+// Link the Vuex store to the Vue instance
 new Vue({
   store,
   render: h => h(App)
