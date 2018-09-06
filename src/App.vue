@@ -17,6 +17,9 @@ import CountDisplay from './components/CountDisplay'
 import Increment from './components/Increment'
 import Decrement from './components/Decrement'
 import CustomIncrement from './components/CustomIncrement'
+import store from './store'
+import Vue from 'vue'
+
 
 export default {
   name: 'app',
@@ -25,6 +28,11 @@ export default {
     Increment,
     Decrement,
     CustomIncrement
+  },
+  data () {
+    return {
+      store: this.$store
+    }
   }
 }
 </script>

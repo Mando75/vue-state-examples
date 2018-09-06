@@ -1,22 +1,19 @@
 <template>
   <div>
     <input type="number" id="customInc" v-model.number="inputVal" :placeholder="inputVal" />
-    <button class="btn" @click="addToCounter({toAdd: inputVal})">Add {{ inputVal || 0 }}</button>
+    <button class="btn" @click="store.count += inputVal">Add {{ inputVal || 0 }}</button>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
 
 export default {
   name: 'CustomIncrement',
   data () {
     return {
+      store: this.$store,
       inputVal: 0
     }
-  },
-  methods: {
-    ...mapActions(['addToCounter'])
   }
 }
 </script>
