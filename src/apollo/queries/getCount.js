@@ -6,7 +6,7 @@ import { gql } from 'apollo-boost'
 export default gql`
 {
     count @client {
-      value 
-    } 
+      value
+    }
 }
 `
