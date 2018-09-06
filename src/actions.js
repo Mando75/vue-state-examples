@@ -1,3 +1,6 @@
+// only needed for alt method
+import store from './store'
+
 // Recommended way to create the actions
 // Keep functions pure, returning the value of the to-be-modified state
 
@@ -9,3 +12,8 @@ export const actions = store => ({
   asyncDecrement: state => setTimeout(() => store.setState({ count: state.count - 1 }), 500),
   addToCounter: (state, { toAdd }) => ({ count: state.count + toAdd })
 })
+
+// alternative method to set state
+// Using this method will not give you access to existing state
+
+export const exampleAltMethod = () => store.setState({ someVal: true })
