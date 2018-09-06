@@ -7,11 +7,18 @@ import { resolvers } from './resolvers/resolver'
 const cache = new InMemoryCache()
 
 // Create a new clientState, including the default values
+// If there is a client side type, a typename field must be included
+// for apollo to correctly cache updates
 const link = withClientState({
   cache,
   resolvers,
   defaults: {
-    count: 0
+    count: 0,
+    exampleClientType: {
+      value: 'someValue',
+      id: 'someID',
+      __typename: 'exampleClientType'
+    }
   }
 })
 
