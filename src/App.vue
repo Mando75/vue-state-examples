@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png" />
-    <h1>State Management Example: Vuex</h1>
+    <h1>State Management Example: Basic Store</h1>
     <hr>
     <CountDisplay />
     <div id="btn-wrapper">
